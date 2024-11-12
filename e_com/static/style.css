@@ -1,0 +1,29 @@
+.log{
+    width: 13vw;
+    height: 3.5vh;
+
+}
+
+.mlog{
+    margin: auto;
+    width: 12%;
+    margin-top: 15%;
+}
+
+.log1{
+    width: 13.4vw;
+    height: 3.5vh;
+    background-color: rgb(42, 76, 138);
+}
+
+body{
+    background: url('111.jpg!sw800')
+    no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login{
+    text-align: center;
+    color: white;
+}
+
