@@ -1,6 +1,7 @@
 .log{
     width: 13vw;
     height: 3.5vh;
+   
 
 }
 
@@ -11,9 +12,9 @@
 }
 
 .log1{
-    width: 13.4vw;
+    width: 13vw;
     height: 3.5vh;
-    background-color: rgb(42, 76, 138);
+    background-color: rgb(126, 33, 56);
 }
 
 body{
@@ -26,4 +27,6 @@ body{
     text-align: center;
     color: white;
 }
+
+/*------------------------------- add --------------------------------------*/
 

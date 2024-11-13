@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+</head>
+
+<body>
+
+    <div class="main"></div>
+        <h1 style="color: white;">ADD PRODUCT</h1>
+    
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <input type="text" name="pid" id="" class="box1" placeholder="pid"><br><br>
+            <input type="text" name="name" id="" class="box1" placeholder="Product Name"><br><br>
+            <input type="text" name="dis" id="" class="box1" placeholder="Discription"><br><br>
+            <input type="number" name="price" id="" class="box1" placeholder="Price"><br><br>
+            <input type="number" name="offer price" id="" class="box1" placeholder="Offer_Price"><br><br>
+            <input type="number" name="stock" id="" class="box1" placeholder="Quantity"><br><br>
+            <input type="file" name="img" class="box1" id=""><br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+
+
+</body>
+
+</html>

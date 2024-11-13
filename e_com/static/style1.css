@@ -1,0 +1,16 @@
+
+
+body{
+    background: url('111.jpg!sw800')
+    no-repeat center center fixed;
+    background-size: cover;
+}
+
+.box1{
+    padding: 10px;
+    border-radius: 10px;
+    width: 15vw;
+
+}
+
+
