@@ -1,6 +1,7 @@
 .log{
     width: 13vw;
-    height: 3.5vh;
+    height: 4vh;
+    border-radius: 5px;
    
 
 }
@@ -8,24 +9,26 @@
 .mlog{
     margin: auto;
     width: 12%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
-.log1{
+.button{
     width: 13vw;
-    height: 3.5vh;
-    background-color: rgb(126, 33, 56);
+    height: 4vh;
+    border-radius: 2px;
+    background-color: rgb(216, 210, 211);
 }
 
 body{
-    background: url('111.jpg!sw800')
+    background: url('bg1.jpg')
     no-repeat center center fixed;
-    background-size: cover;
+    background-size:cover;
 }
 
-.login{
+.logh{
     text-align: center;
     color: white;
+    margin-bottom: 10%;
 }
 
 /*------------------------------- add --------------------------------------*/
