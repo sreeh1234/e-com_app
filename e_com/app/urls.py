@@ -8,5 +8,14 @@ urlpatterns = [
     path('logout',views.e_com_logout),
     path('add product',views.add),
     path('edit_product/<id>',views.edit_product),
+    path('delete_product/<pid>',views.delete),
+    
+    
+# ----------------------------------------user----------------------------------------------
+
+    path('register',views.register),
+    path('user_home',views.user_home),
+    
+    
     
 ]
