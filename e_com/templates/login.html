@@ -22,7 +22,10 @@
         <input type="password" name="password" id="" class="log" placeholder="Password"><br><br>
     <input type="submit" class="button" value="login">
     </form>
-    <a href="register">Register</a>
+    <div>
+      <a href="register">Register</a>
+    </div>
+    
   </div>  
     
 
@@ -34,8 +37,8 @@
     <div class="alert alert-warning alert-dismissible">
       <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
       {{ message }}
-      <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
-    </div>
+      
+    </div><strong>Warning!</strong> This alert box could indicate a warning that might need attention.
     {% endfor %}
     {% endif %}
   </div>

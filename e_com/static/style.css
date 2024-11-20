@@ -31,5 +31,17 @@ body{
     margin-bottom: 10%;
 }
 
-/*------------------------------- add --------------------------------------*/
+.reg{
+    
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.vpro{
+   text-align: center;
+   color: white;
+   
+}
+/*------------------------------- cart --------------------------------------*/
 

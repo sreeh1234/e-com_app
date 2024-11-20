@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from .models import product
+from .models import *
 import os
 from django.contrib.auth.models import User
 
@@ -123,3 +123,57 @@ def user_home(req):
         return render(req,'user/home.html',{'products':products})
     else:
         return redirect(e_com_login)
+    
+def view_product(req,pid):
+    data=product.objects.get(pk=pid) 
+    return render(req,'user/view.html',{'data':data})   
+
+def add_to_cart(req,pid):
+    products=product.objects.get(pk=pid) 
+    user=User.objects.get(username=req.session['user'])
+    try:
+        Cart=cart.objects.get(product=products,user=user)
+        Cart.qty+=1
+        Cart.save()
+    except:    
+        data=cart.objects.create(product=products,user=user,qty=1)
+        data.save()
+    return redirect(view_cart)
+
+
+def view_cart(req):
+    user=User.objects.get(username=req.session['user'])
+    data=cart.objects.filter(user=user)
+    return render(req,'user/cart.html',{'cart':data})
+
+
+def qty_incri(req,cid):
+    data=cart.objects.get(pk=cid)
+    print(data.qty)
+    print(data.product.stock)
+    if data.product.stock > data.qty:
+        data.qty+=1
+        data.save()
+    return redirect(view_cart)   
+
+
+def qty_dec(req,cid):
+    data=cart.objects.get(pk=cid)
+    data.qty-=1
+    data.save()
+    if data.qty==0:
+        data.delete()
+    return redirect(view_cart)  
+
+def buy_product(req,pid):
+    products=product.objects.get(pk=pid)
+    user=User.objects.get(username=req.session['user'])
+    qty=1
+    price=products.offer_price
+    buy=Buy.objects.create(product=products,user=user,qty=qty,t_price=price)
+    return redirect(user_bookings)
+
+def user_bookings(req):
+    user=User.objects.get(username=req.session['user'])
+    bookings=Buy.objects.filter(user=user)
+    return render(req,'user/bookings.html',{'bookings':bookings})
