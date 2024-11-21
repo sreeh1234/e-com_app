@@ -9,6 +9,7 @@ urlpatterns = [
     path('add product',views.add),
     path('edit_product/<id>',views.edit_product),
     path('delete_product/<pid>',views.delete),
+    path('bookings',views.bookings),
     
     
 # ----------------------------------------user----------------------------------------------
@@ -22,6 +23,7 @@ urlpatterns = [
     path('decrement/<cid>',views.qty_dec),
     path('buyproduct/<pid>',views.buy_product),
     path('userbookings',views.user_bookings),
+    path('cart_buy/<cid>',views.cart_buy),
     
     
     

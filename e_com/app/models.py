@@ -12,7 +12,7 @@ class product(models.Model):
     stock=models.IntegerField()
     img=models.FileField()
     
-    
+ 
     
 class cart(models.Model):
     product=models.ForeignKey(product,on_delete=models.CASCADE)

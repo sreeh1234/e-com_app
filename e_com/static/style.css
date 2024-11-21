@@ -10,13 +10,14 @@
     margin: auto;
     width: 12%;
     margin-top: 10%;
+    
 }
 
 .button{
     width: 13vw;
     height: 4vh;
     border-radius: 2px;
-    background-color: rgb(216, 210, 211);
+    background-color: rgb(237, 240, 240);
 }
 
 body{

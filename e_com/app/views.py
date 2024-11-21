@@ -37,8 +37,8 @@ def e_com_logout(req):
     req.session.flush()        #delete
     return redirect(e_com_login)
 
-def e_com_addpro(req):
-    return render(req,'shop/add.html')
+# def e_com_addpro(req):
+#         return render(req,'shop/add.html')
 
 def shop_home(req):
     if 'shop' in req.session:
@@ -88,6 +88,10 @@ def edit_product(req,id):
     else:
         data=product.objects.get(pk=id)        
         return render(req,'shop/edit.html',{'data':data})
+    
+def bookings(req):
+    booking=Buy.objects.all()[::-1]
+    return render(req,'shop/bookings.html',{'bookings':booking})    
     
     
 def delete(req,pid):
@@ -171,9 +175,20 @@ def buy_product(req,pid):
     qty=1
     price=products.offer_price
     buy=Buy.objects.create(product=products,user=user,qty=qty,t_price=price)
+    buy.save()
     return redirect(user_bookings)
+
+
+def cart_buy(req,cid):
+    Cart=cart.objects.get(pk=cid)
+    price=Cart.qty*Cart.product.offer_price
+    buy=Buy.objects.create(product=Cart.product,user=Cart.user,qty=Cart.qty,t_price=price)
+    buy.save()
+    data=product.objects.get(pk=cid)
+    return redirect(user_bookings)
+    
 
 def user_bookings(req):
     user=User.objects.get(username=req.session['user'])
-    bookings=Buy.objects.filter(user=user)
+    bookings=Buy.objects.filter(user=user)[::-1]
     return render(req,'user/bookings.html',{'bookings':bookings})
